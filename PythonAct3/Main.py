@@ -16,6 +16,27 @@ class Student:
 		
 		self.fontModify = "Arial,30"
 		
+		# Combobox creation 
+		self.n = StringVar() 
+		monthchoosen = Combobox(self.root, width = 27, textvariable = n) 
+  
+		# Adding combobox drop down list 
+		monthchoosen['values'] = (' January',  
+                          ' February', 
+                          ' March', 
+                          ' April', 
+                          ' May', 
+                          ' June', 
+                          ' July', 
+                          ' August', 
+                          ' September', 
+                          ' October', 
+                          ' November', 
+                          ' December') 
+  
+		monthchoosen.grid(column = 1, row = 5) 
+		
+		
 		#Label Rows
 		self.lb_idNo = Label(self.root, text="Id No: ", font = self.fontModify )
 		self.lb_idNo.grid(row=0,column=0)
@@ -34,13 +55,18 @@ class Student:
 		self.entry_lastName.grid(row=1,column=1)
 		self.entry_firstName = Entry(self.root, font = self.fontModify  )
 		self.entry_firstName.grid(row=2,column=1)
+		self.entry_comboBox = monthchoosen.current()
+		self.entry_comboBox.grid(row=3,column=1)
 		
 		
 		
 		
 		#Execution
 		self.root.mainloop()
+	
 
+
+	
 
 def main()->None:
 	Student()
