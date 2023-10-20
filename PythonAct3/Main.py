@@ -1,5 +1,6 @@
 
 from tkinter import *
+from tkinter import ttk
 
 
 class Student:
@@ -18,23 +19,15 @@ class Student:
 		
 		# Combobox creation 
 		self.n = StringVar() 
-		monthchoosen = Combobox(self.root, width = 27, textvariable = n) 
+		monthchoosen = ttk.Combobox(self.root, width = 27, textvariable = self.n) 
   
 		# Adding combobox drop down list 
-		monthchoosen['values'] = (' January',  
-                          ' February', 
-                          ' March', 
-                          ' April', 
-                          ' May', 
-                          ' June', 
-                          ' July', 
-                          ' August', 
-                          ' September', 
-                          ' October', 
-                          ' November', 
-                          ' December') 
+		monthchoosen['values'] = (' BSIT',  
+                          ' BSCS', 
+                          ' ACT'
+                          ) 
   
-		monthchoosen.grid(column = 1, row = 5) 
+		
 		
 		
 		#Label Rows
@@ -55,8 +48,7 @@ class Student:
 		self.entry_lastName.grid(row=1,column=1)
 		self.entry_firstName = Entry(self.root, font = self.fontModify  )
 		self.entry_firstName.grid(row=2,column=1)
-		self.entry_comboBox = monthchoosen.current()
-		self.entry_comboBox.grid(row=3,column=1)
+        
 		
 		
 		
