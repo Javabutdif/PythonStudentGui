@@ -1,6 +1,7 @@
 """
 	Python Database helper
 """
+from os import system
 from mysql.connector import connect
 
 def db_connect()->object:
@@ -41,7 +42,7 @@ def addrecord(table:str,**kwargs)->bool:
     val:str = "','".join(vals)
     sql:str = f"INSERT INTO `{table}`(`{fld}`) values('{val}')"
     print(sql)
-    return doProces(sql)
+    return doProcess(sql)
     
 def updaterecord(table:str,**kwargs)->bool:
     flds:list = list(kwargs.keys())

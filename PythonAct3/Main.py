@@ -3,6 +3,7 @@ from tkinter import *
 from tkinter import ttk
 
 
+
 def findStud()->None:pass
 
 class Student:
