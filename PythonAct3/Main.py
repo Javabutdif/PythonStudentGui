@@ -3,7 +3,10 @@ from tkinter import *
 from tkinter import ttk
 
 
+def findStud()->None:pass
+
 class Student:
+
 	
 	def __init__ (self):
 		
@@ -61,6 +64,10 @@ class Student:
 		self.course.grid(row=3,column=1)
 		self.year.current()
 		self.year.grid(row=4,column=1)
+		self.button = Button(self.root, text="Find" , command=findStud())
+		self.button.grid(row=0, column=2)
+
+
 
         
 		
@@ -69,6 +76,8 @@ class Student:
 		
 		#Execution
 		self.root.mainloop()
+
+
 	
 
 
