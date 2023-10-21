@@ -18,19 +18,28 @@ class Student:
 		self.fontModify = "Arial,30"
 		
 		# Combobox creation 
-		self.n = StringVar() 
-		monthchoosen = ttk.Combobox(self.root, width = 27, textvariable = self.n) 
+		n = StringVar()
+		self.course = ttk.Combobox(self.root, width = 27, textvariable = n)
   
 		# Adding combobox drop down list 
-		monthchoosen['values'] = (' BSIT',  
+		self.course['values'] = (' BSIT',
                           ' BSCS', 
                           ' ACT'
-                          ) 
-  
-		
-		
-		
-		#Label Rows
+                          )
+		y = StringVar()
+		self.year = ttk.Combobox(self.root, width=27, textvariable=y)
+
+		# Adding combobox drop down list
+		self.year['values'] = (' 1',
+								 ' 2',
+								 ' 3',
+							   ' 4'
+								 )
+
+
+
+
+	#Label Rows
 		self.lb_idNo = Label(self.root, text="Id No: ", font = self.fontModify )
 		self.lb_idNo.grid(row=0,column=0)
 		self.lb_LastName = Label(self.root, text="Last Name: ", font = self.fontModify )
@@ -48,6 +57,11 @@ class Student:
 		self.entry_lastName.grid(row=1,column=1)
 		self.entry_firstName = Entry(self.root, font = self.fontModify  )
 		self.entry_firstName.grid(row=2,column=1)
+		self.course.current()
+		self.course.grid(row=3,column=1)
+		self.year.current()
+		self.year.grid(row=4,column=1)
+
         
 		
 		
