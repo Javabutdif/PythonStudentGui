@@ -5,6 +5,11 @@ from tkinter import ttk
 
 
 def findStud()->None:pass
+def newStud()->None:pass
+def saveStud()->None:pass
+def deleteStud()->None:pass
+def updateStud()->None:pass
+
 
 class Student:
 
@@ -65,8 +70,17 @@ class Student:
 		self.course.grid(row=3,column=1)
 		self.year.current()
 		self.year.grid(row=4,column=1)
-		self.button = Button(self.root, text="Find" , command=findStud())
-		self.button.grid(row=0, column=2)
+		self.find_button = Button(self.root, text="Find" , command=findStud())
+		self.find_button.grid(row=0, column=2)
+		#################
+		self.new_button = Button(self.root, text="New", command=newStud())
+		self.new_button.grid(row=5, column=0)
+		self.save_button = Button(self.root, text="Save", command=saveStud())
+		self.save_button.grid(row=5, column=1)
+		self.delete_button = Button(self.root, text="Delete", command=deleteStud())
+		self.delete_button.grid(row=5, column=2)
+		self.update_button = Button(self.root, text="Update", command=updateStud())
+		self.update_button.grid(row=0, column=2)
 
 
 

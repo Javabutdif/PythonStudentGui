@@ -1,7 +1,6 @@
 """
 	Python Database helper
 """
-from os import system
 from mysql.connector import connect
 
 def db_connect()->object:
