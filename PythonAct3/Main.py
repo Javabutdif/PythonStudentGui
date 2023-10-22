@@ -3,17 +3,7 @@ from tkinter import *
 from tkinter import ttk
 
 
-
-#Method for database
-def findStud()->None:pass
-def newStud()->None:pass
-def saveStud()->None:pass
-def deleteStud()->None:pass
-def updateStud()->None:pass
-
-
 class Student:
-
 	
 	def __init__ (self):
 		
@@ -28,28 +18,19 @@ class Student:
 		self.fontModify = "Arial,30"
 		
 		# Combobox creation 
-		n = StringVar()
-		self.course = ttk.Combobox(self.root, width = 27, textvariable = n)
+		self.n = StringVar() 
+		monthchoosen = ttk.Combobox(self.root, width = 27, textvariable = self.n) 
   
 		# Adding combobox drop down list 
-		self.course['values'] = (' BSIT',
+		monthchoosen['values'] = (' BSIT',  
                           ' BSCS', 
                           ' ACT'
-                          )
-		y = StringVar()
-		self.year = ttk.Combobox(self.root, width=27, textvariable=y)
-
-		# Adding combobox drop down list
-		self.year['values'] = (' 1',
-								 ' 2',
-								 ' 3',
-							   ' 4'
-								 )
-
-
-
-
-	#Label Rows
+                          ) 
+  
+		
+		
+		
+		#Label Rows
 		self.lb_idNo = Label(self.root, text="Id No: ", font = self.fontModify )
 		self.lb_idNo.grid(row=0,column=0)
 		self.lb_LastName = Label(self.root, text="Last Name: ", font = self.fontModify )
@@ -67,25 +48,6 @@ class Student:
 		self.entry_lastName.grid(row=1,column=1)
 		self.entry_firstName = Entry(self.root, font = self.fontModify  )
 		self.entry_firstName.grid(row=2,column=1)
-		self.course.current()
-		self.course.grid(row=3,column=1)
-		self.year.current()
-		self.year.grid(row=4,column=1)
-		self.find_button = Button(self.root, text="Find" , command=findStud())
-		self.find_button.grid(row=0, column=2)
-		#################
-
-		self.new_button = Button(self.root, text="New", command=newStud())
-		self.new_button.grid(row=5, column=0)
-		self.save_button = Button(self.root, text="Save", command=saveStud())
-		self.save_button.grid(row=5, column=1)
-		self.delete_button = Button(self.root, text="Delete", command=deleteStud())
-		self.delete_button.grid(row=5, column=2)
-		self.update_button = Button(self.root, text="Update", command=updateStud())
-		self.update_button.grid(row=5, column=3)
-
-
-
         
 		
 		
@@ -93,8 +55,6 @@ class Student:
 		
 		#Execution
 		self.root.mainloop()
-
-
 	
 
 
